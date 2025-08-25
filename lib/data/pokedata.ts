@@ -26,3 +26,13 @@ export async function fetchPokemonById(id: string) {
     }
 }
 
+export async function fetchPokemonBySearch(name: string) {
+    try {
+        const response = await fetch(`${endpoint}/${name}`, { cache: 'no-store' });
+        return await response.json();
+    } catch (error) {
+        console.log(error);
+        throw new Error("Det gick inte att nå API:et för att hämta pokémons.");
+    }
+}
+
