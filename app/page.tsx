@@ -15,6 +15,20 @@ export default function Home() {
           />
           Random Pokémon</button>
       </section>
+
+      <section id="searach" className="flex justify-between gap-1 mt-8 mx-auto items-center px-4 rounded-full w-2xl shadow-md hover:bg-purple-50">
+        <input type="text" className="p-4 focus:outline-none" placeholder="Search for a pokemon" />
+        <svg className="h-5 m-4" xmlns="/Search.svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+        </svg>
+      </section>
+
+      {/* <section className="flex gap-4 items-center my-14 p-14 bg-purple-50"> */}
+      <section className="content-grid my-14 p-14 bg-purple-50">
+
+        <h2 className="text-cetner mx-auto  text-4xl">Featured Pokémon</h2>
+
+      </section>
     </main>
   );
 }
