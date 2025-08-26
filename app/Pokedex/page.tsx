@@ -4,6 +4,7 @@ export default function Pokedex() {
     return(
         <main>
             <Header />
+            
         </main>
     );
 }
