@@ -34,3 +34,20 @@ export async function fetchPokemon(identifier: number | string): Promise<Pokemon
         throw error;
     }
 }
+
+export async function fetchColor(identifier: number | string): Promise<Pokemon> {
+            console.log("Anropar URL:", `${endpoint}-species/${identifier}`);
+
+    try {
+        const res = await fetch(`${endpoint}-species/${identifier}`);
+
+        if (!res.ok) {
+            throw new Error(`Pokémonfärg inte hittad: ${identifier}`);
+        }
+        const data = await res.json();
+        return data; // Se till att ditt interface matchar detta
+    } catch (error) {
+        console.error("Fel vid hämtning av Pokémonfärg:", error);
+        throw error;
+    }
+}

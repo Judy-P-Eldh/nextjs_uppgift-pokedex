@@ -15,6 +15,17 @@ export interface Pokemon {
       name: string;
     };
   }[];
+   species: {
+    color: {
+      name: string;
+    };
+    habitat: {
+      name: string;
+    };
+    shape: {
+      name: string;
+    }
+   }[];
 }
 
 export interface FeaturedList {

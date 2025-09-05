@@ -3,16 +3,7 @@ import Image from "next/image";
 import { FeaturedList, Pokemon } from "@/lib/interface";
 import Header from "@/components/header";
 import Link from "next/link";
-
-function getRandomItems<T>(arr: T[], count: number): T[] {
-  if (!Array.isArray(arr) || arr.length === 0 || count <= 0) {
-    return [];
-  }
-  // Skapar en kopia av arrayen och blanda den (shuffla)
-  const shuffled = arr.slice().sort(() => Math.random() - 0.5);
-  // Returnerar 'count' antal element från den blandade arrayen
-  return shuffled.slice(0, count);
-}
+import { getRandomItems } from "@/lib/util";
 
 
 export default async function Home() {
@@ -59,11 +50,22 @@ export default async function Home() {
                 <Image className="border-2 rounded-full border-cyan-900" src={imageUrl} alt={pokemon.name} width={150} height={150} />
                 <h3 className="justify-self-center text-xl mt-4 mx-auto">{pokemon.name}</h3>
                 <div>
-                    <p>Name: {pokemon.name}</p>
-                    <p>Id: {pokemon.id}</p>
-                    <p>Weight: {pokemon.weight}</p>
-                    <p>Height: {pokemon.height}</p>
-                    <p>Base experience: {pokemon.base_experience}</p>
+                  <p>Name: {pokemon.name}</p>
+                  <p>Id: {pokemon.id}</p>
+                  <p>Weight: {pokemon.weight}</p>
+                  <p>Height: {pokemon.height}</p>
+                  <p>Base experience: {pokemon.base_experience}</p>
+                  {/* <div>
+                    {pokemon.species.map((thing, index) => {
+                      return (
+                        <div key={index}>
+                          <p>Color: {thing.color.name}</p>
+                          <p>Habitat: {thing.habitat.name}</p>
+                          <p>Shape: {thing.shape.name}</p>
+                        </div>
+                      );
+                    })}
+                  </div> */}
                 </div>
               </div>
             );
